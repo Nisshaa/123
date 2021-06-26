@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b49c9113c1374ab6a08e807cfa3218ac" Name="Diagram1">
+        <EntityTypeShape EntityType="fitness_kpModel.Product" Width="1.5" PointX="8" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fitness_kpModel.ProductProvaiderOrder" Width="1.5" PointX="10.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fitness_kpModel.ProductType" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fitness_kpModel.Role" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="fitness_kpModel.Service" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fitness_kpModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="fitness_kpModel.Userman" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fitness_kpModel.UserManService" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="fitness_kpModel.Zakazy" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="fitness_kpModel.FK_Product_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="fitness_kpModel.FK_ProductProvaiderOrder_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="fitness_kpModel.FK_Userman_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="fitness_kpModel.FK_Userman_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="fitness_kpModel.FK_Order_Userman" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
