@@ -7,38 +7,22 @@
         mc:Ignorable="d"
      Title="ServiceWindow" Height="740" Width="800">
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
-      
-        <StackPanel Grid.Column="1" Orientation="Horizontal" Visibility="{Binding NewProduct}">
-            <Label Content="Идентификатор услуги: "/>
-            <Label Content="{Binding CurrentOrder.id}"/>
-        </StackPanel>
 
-        <StackPanel Margin="5 60" Grid.Column="1">
-            <ComboBox
-                HorizontalAlignment="left"
-                ItemsSource="{Binding UsermanList}"
-                SelectedItem="{Binding CurrentOrder.Userman}">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <Label Content="{Binding FullName}" Visibility="{Binding FilterRole}"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-
+        <StackPanel Margin="5" Grid.Column="1">
             <Label Content="Номер заказа"/>
             <TextBox Text="{Binding CurrentOrder.Number}"/>
             <Label Content="Дата заказа"/>
             <TextBox Text="{Binding CurrentOrder.Data}"/>
             <Label Content="Цена заказа"/>
             <TextBox Text="{Binding CurrentOrder.Total}"/>
-            <Label Content="Время заказа"/>
-            <TextBox Text="{Binding CurrentOrder.OrderTime}"/>
-            <Button Width="100" Margin="5" HorizontalAlignment="Left" Click="GetImageButton_Click">Выбор картинки</Button>
-            <Button Width="100" Margin="5" HorizontalAlignment="Left" Click="SaveButton_Click">Сохранить</Button>
+            <Label Content="Клиент"/>
+            <Button Content="Выбрать картинку" Margin="7" HorizontalAlignment="left" Click="GetImageButton_Click"></Button>
+            <Button Content="Сохранить" Margin="7" HorizontalAlignment="left" Click="SaveButton"></Button>
         </StackPanel>
     </Grid>
 </Window>

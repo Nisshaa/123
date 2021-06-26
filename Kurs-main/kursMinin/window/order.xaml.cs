@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 
 namespace kursMinin
 {
-    public partial class Userman
+    public partial class Zakazy
     {
         // ссылка на картинку
         // по ТЗ, если картинка не найдена, то должна выводиться картинка по-умолчанию
@@ -27,7 +27,7 @@ namespace kursMinin
         {
             get
             {
-                var imageName = System.IO.Path.Combine(Environment.CurrentDirectory, photo ?? "");
+                var imageName = System.IO.Path.Combine(Environment.CurrentDirectory, Phot ?? "");
                 return System.IO.File.Exists(imageName) ? new Uri(imageName) : new Uri("pack://application:,,,/img/picture.png");
             }
         }

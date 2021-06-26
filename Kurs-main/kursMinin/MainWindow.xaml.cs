@@ -31,6 +31,7 @@ namespace kursMinin
                 return System.IO.File.Exists(imageName) ? new Uri(imageName) : new Uri("pack://application:,,,/img/picture.png");
             }
         }
+       
         public float DiscountFloat
         {
             get
@@ -205,8 +206,14 @@ namespace kursMinin
             }
 
         }
-     
-        
+        public int FilteredProductCount
+        {
+            get
+            {
+                return ServiceList.Count;
+            }
+        }
+
     }
 }
 
