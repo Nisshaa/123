@@ -64,7 +64,9 @@ https://github.com/Nisshaa/Kurs
 ### Приложение было разработанно в Visual Studio, пример работы программы:
 ### Главное окно:
 ![MainWindow](./img/MainWindow.PNG)
-#### Прмер кода разметки страницы:
+
+  
+  #### Прмер кода разметки страницы:
   <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -320,6 +322,8 @@ namespace kursMinin
 
 ### Окно заказов:
 ![OrderWindow](./img/OrderWindow.png)
+
+
 #### Прмер кода разметки страницы заказов:
 ```xml
  <Grid>
