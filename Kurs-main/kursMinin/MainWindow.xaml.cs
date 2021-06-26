@@ -40,6 +40,13 @@ namespace kursMinin
             }
       
         }
+        public Boolean MinPrice
+        {
+            get
+            {
+                return Price < 100;
+            }
+        }
         public string ProductString
         {
             get

@@ -14,6 +14,10 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Margin="5" Grid.Column="1">
+            <Label Content="Имя"/>
+            <TextBox Text="{Binding CurrentOrder.FirstName}"/>
+            <Label Content="Фамилия"/>
+            <TextBox Text="{Binding CurrentOrder.LastName}"/>
             <Label Content="Номер заказа"/>
             <TextBox Text="{Binding CurrentOrder.Number}"/>
             <Label Content="Дата заказа"/>

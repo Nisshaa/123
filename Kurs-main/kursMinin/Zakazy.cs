@@ -21,6 +21,8 @@ namespace kursMinin
         public Nullable<decimal> Total { get; set; }
         public Nullable<System.DateTime> Data { get; set; }
         public string Phot { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     
         public virtual Userman Userman { get; set; }
     }

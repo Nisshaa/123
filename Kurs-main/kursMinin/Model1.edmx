@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище fitness_kpModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище fitness_kpModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="id" />
@@ -52,17 +52,6 @@
           <Property Name="Duration" Type="float" />
           <Property Name="img" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "fitness_kp.dbo.service_a_import" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="service_a_import">
-          <Property Name="фото клиента" Type="nvarchar" MaxLength="255" />
-          <Property Name="Время заказа" Type="float" />
-          <Property Name="Номер" Type="float" />
-          <Property Name="Дата" Type="datetime" />
-          <Property Name="Название" Type="nvarchar" MaxLength="255" />
-          <Property Name="Количество" Type="float" />
-          <Property Name="Итоговая сумм" Type="float" />
-        </EntityType>-->
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -115,6 +104,8 @@
           <Property Name="Total" Type="money" />
           <Property Name="Data" Type="date" />
           <Property Name="Phot" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Order_Userman">
           <End Role="Userman" Type="Self.Userman" Multiplicity="0..1" />
@@ -207,8 +198,7 @@
             <End Role="Userman" EntitySet="Userman" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="fitness_kpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -321,6 +311,8 @@
           <Property Name="Data" Type="DateTime" Precision="0" />
           <Property Name="Phot" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Userman" Relationship="Self.FK_Order_Userman" FromRole="Zakazy" ToRole="Userman" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Product_ProductType">
           <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
@@ -518,6 +510,8 @@
           <EntitySetMapping Name="Zakazy">
             <EntityTypeMapping TypeName="fitness_kpModel.Zakazy">
               <MappingFragment StoreEntitySet="Zakazy">
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Userid" ColumnName="Userid" />
                 <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />

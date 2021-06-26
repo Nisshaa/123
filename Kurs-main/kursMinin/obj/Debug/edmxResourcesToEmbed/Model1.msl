@@ -100,6 +100,8 @@
     <EntitySetMapping Name="Zakazy">
       <EntityTypeMapping TypeName="fitness_kpModel.Zakazy">
         <MappingFragment StoreEntitySet="Zakazy">
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Userid" ColumnName="Userid" />
           <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />

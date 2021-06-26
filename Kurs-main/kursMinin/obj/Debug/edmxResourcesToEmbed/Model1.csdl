@@ -109,6 +109,8 @@
     <Property Name="Data" Type="DateTime" Precision="0" />
     <Property Name="Phot" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Userman" Relationship="Self.FK_Order_Userman" FromRole="Zakazy" ToRole="Userman" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_Product_ProductType">
     <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />

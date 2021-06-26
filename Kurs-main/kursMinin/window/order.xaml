@@ -64,9 +64,9 @@
                                 <StackPanel
                             Orientation="Horizontal">
                                     <TextBlock 
-                                Text="{Binding Userman.FirstName}"/>
+                                Text="{Binding FirstName}"/>
                                     <TextBlock 
-                                Text="{Binding Userman.LastName}"/>
+                                Text="{Binding LastName}"/>
                                     <TextBlock 
                                 Text="{Binding Userman.Phone}"/>
                                     <TextBlock 
