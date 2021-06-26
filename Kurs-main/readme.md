@@ -320,8 +320,6 @@ namespace kursMinin
 
 ### Окно заказов:
 ![OrderWindow](./img/OrderWindow.png)
-
-
 #### Прмер кода разметки страницы заказов:
 ```xml
  <Grid>
@@ -413,7 +411,6 @@ namespace kursMinin
     </Grid>
 </Window>
 ```
-
 #### Пример Логики страницы заказов:
 
 ```cs
@@ -507,8 +504,6 @@ namespace kursMinin.window
 ### Окно добавления и редактирования заказов:
 ![ServiceWindow](./img/EditOrder.png)
 ![ServiceWindow](./img/Red.PNG)
-
-
 #### Прмер кода разметки страницы редактирования заказов:
 ```xml
   <Grid>
