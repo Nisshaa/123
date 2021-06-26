@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 
 namespace kursMinin
 {
-    public partial class Zakazy
+    public partial class Userman
     {
         // ссылка на картинку
         // по ТЗ, если картинка не найдена, то должна выводиться картинка по-умолчанию
@@ -27,7 +27,7 @@ namespace kursMinin
         {
             get
             {
-                var imageName = System.IO.Path.Combine(Environment.CurrentDirectory, Phot ?? "");
+                var imageName = System.IO.Path.Combine(Environment.CurrentDirectory, photo ?? "");
                 return System.IO.File.Exists(imageName) ? new Uri(imageName) : new Uri("pack://application:,,,/img/picture.png");
             }
         }
@@ -65,24 +65,22 @@ namespace kursMinin.window
             this.DataContext = this;
             OrderList = Core.DB.Zakazy.ToList();
         }
+
+        private void EditOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var SelectedOrder = ProductListView.SelectedItem as Zakazy;
+            var EditOrderWindow = new ServiceWindow(SelectedOrder);
+            if ((bool)EditOrderWindow.ShowDialog())
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs("OrderList"));
+            }
+        }
         private void DelOrd_Click(object sender, RoutedEventArgs e)
         {
             var item = ProductListView.SelectedItem as Zakazy;
             Core.DB.Zakazy.Remove(item);
             Core.DB.SaveChanges();
             OrderList = Core.DB.Zakazy.ToList();
-        }
-
-        private void EditOrder_Click(object sender, RoutedEventArgs e)
-        {
-            var SelectedService = ProductListView.SelectedItem as Zakazy;
-            var EditServiceWindow = new window.ServiceWindow(SelectedService);
-            if ((bool)EditServiceWindow.ShowDialog())
-            {
-                // при успешном завершении не забываем перерисовать список услуг
-                PropertyChanged(this, new PropertyChangedEventArgs("OrderList"));
-                // и еще счетчики - их добавьте сами
-            }
         }
         private void AddOrder_Click(object sender, RoutedEventArgs e)
         {
@@ -97,6 +95,11 @@ namespace kursMinin.window
               
                 PropertyChanged(this, new PropertyChangedEventArgs("OrderList"));
             }
+        }
+
+        private void ProductListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

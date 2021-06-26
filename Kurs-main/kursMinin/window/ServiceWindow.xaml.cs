@@ -90,40 +90,23 @@ namespace kursMinin.window
             }
         }
 
-            private void SaveButton_Click(object sender, RoutedEventArgs e)
+        private void SaveButton(object sender, RoutedEventArgs e)
         {
-
-
-
+            if (CurrentOrder.Total <= 0)
             {
-                if (CurrentOrder.id == 0)
-                    Core.DB.Zakazy.Add(CurrentOrder);
-
-                
-                try
-                {
-                    Core.DB.SaveChanges();
-                }
-                catch
-                {
-                }
-                DialogResult = true;
+                MessageBox.Show("Стоимость заказа должна быть больше ноля");
+                return;
             }
-        
-           
-           
-        }
-       
-        public string NewProduct
-        {
-            get
+            if (CurrentOrder.id == 0)
+                Core.DB.Zakazy.Add(CurrentOrder);
+            try
             {
-                if (CurrentOrder.id == 0) return "collapsed";
-                return "visible";
-
-
-
+                Core.DB.SaveChanges();
             }
+            catch
+            {
+            }
+            DialogResult = true;
         }
     }
 }

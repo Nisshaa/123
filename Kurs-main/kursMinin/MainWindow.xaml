@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:kursMinin"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
-   <Grid>
+
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="1*"/>
@@ -16,8 +16,7 @@
         Margin="5"
         Source="./Logo/Logo.jpg" 
         VerticalAlignment="Top"/>
-       
-             <StackPanel VerticalAlignment="Bottom">
+        <StackPanel VerticalAlignment="Bottom">
 
             <Label Content="Цена: "/>
             <RadioButton 
@@ -35,13 +34,13 @@
                 VerticalContentAlignment="Center"/>
 
             <Label Content="Фильтр по скидке: "
-                Margin="10,0,0,0"
-                VerticalAlignment="Center"/>
+        Margin="10,0,0,0"
+        VerticalAlignment="Center"/>
             <ComboBox
-                Name="DiscountFilterComboBox"
-                SelectedIndex="0"
-                SelectionChanged="DiscountFilterComboBox_SelectionChanged"
-                ItemsSource="{Binding FilterByPriceNamesList}"/>
+    Name="DiscountFilterComboBox"
+    SelectedIndex="0"
+    SelectionChanged="DiscountFilterComboBox_SelectionChanged"
+    ItemsSource="{Binding FilterByDiscountNamesList}"/>
             <Label Content="Поиск"/>
             <TextBox
                     x:Name="SearchFilterTextBox"
